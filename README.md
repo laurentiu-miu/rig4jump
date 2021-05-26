@@ -25,11 +25,16 @@
  - create repository
  - upload sorces
 
-5. how to start the project
- a. command line / terminal / command promt
- - go to project root
- - mvn clean install
- - mvn spring-boot:run
- b. from intellij editor
-   - load porject
-   - click button run
+5. how to start the project a. command line / terminal / command promt
+
+- go to project root
+- mvn clean install
+- mvn spring-boot:run b. from intellij editor
+    - load porject
+    - click button run
+
+6. Swagger documentation / Open api
+
+- localhost:8080/swagger-ui.html
+- database link   
+  http://localhost:8080/h2-console
