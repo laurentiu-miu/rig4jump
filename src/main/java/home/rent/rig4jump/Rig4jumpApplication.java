@@ -1,5 +1,6 @@
 package home.rent.rig4jump;
 
+import home.rent.rig4jump.repository.UsersRepository;
 import org.springdoc.core.GroupedOpenApi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,6 +18,7 @@ public class Rig4jumpApplication {
 		return GroupedOpenApi.builder().group("Actuator")
 				.pathsToExclude("/profile/*", "/profile")
 				.build();
+
 	}
 
 }

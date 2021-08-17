@@ -15,9 +15,9 @@ public class Equipment {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private Long id_eq;
+  private Long equipmentId;
   @Column(name = "name_eq")
-  private String name_eq;
+  private String nameEq;
   @Column(name = "price")
   private Double price;
   @Column(name = "description")
@@ -25,13 +25,13 @@ public class Equipment {
   @Column(name = "cantitate")
   private Long cantitate;
   @Column(name = "profil_img") //nu stiu
-  private String profil_img;
+  private String profilImg;
   @Column(name = "capota")
   private String capota;
   @Column(name = "voalura_pr")
-  private String voalura_pr;
+  private String voaluraPr;
   @Column(name = "voalura_sc")
-  private String voalura_sc;
+  private String voaluraSc;
   @Column(name = "ap_sig")
-  private String ap_sig;
+  private String apSig;
 }

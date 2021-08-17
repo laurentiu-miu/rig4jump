@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS equipment;
 
 CREATE TABLE equipment
 (
-    id_eq       INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    equipment_id       INT          NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name_eq     VARCHAR(250) NOT NULL,
     description TEXT,
     capota      VARCHAR(250) NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE equipment
 
 CREATE TABLE users
 (
-    id_us    INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    users_id    INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name_us  VARCHAR(60) NOT NULL,
     email    VARCHAR(50) NOT NULL,
     password VARCHAR(30) NOT NULL,
@@ -34,32 +34,32 @@ CREATE TABLE users
 
 CREATE TABLE rentals
 (
-    id_re      INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    id_us      INT NOT NULL,
-    id_eq      INT NOT NULL,
+    rentals_id      INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    users_id      INT NOT NULL,
+    equipment_id      INT NOT NULL,
     start_date DATETIME,
     end_date   DATETIME,
     price      DOUBLE DEFAULT NULL,
-    FOREIGN KEY (id_us) REFERENCES users (id_us),
-    FOREIGN KEY (id_eq) REFERENCES equipment (id_eq)
+    FOREIGN KEY (users_id) REFERENCES users (users_id),
+    FOREIGN KEY (equipment_id) REFERENCES equipment (equipment_id)
 );
 
 
 
 CREATE TABLE history
 (
-    id_hi INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    id_us INT NOT NULL,
-    id_eq INT NOT NULL,
-    FOREIGN KEY (id_eq) REFERENCES users (id_us),
-    FOREIGN KEY (id_eq) REFERENCES equipment (id_eq)
+    history_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    users_id INT NOT NULL,
+    equipment_id INT NOT NULL,
+    FOREIGN KEY (users_id) REFERENCES users (users_id),
+    FOREIGN KEY (equipment_id) REFERENCES equipment (equipment_id)
 );
 
 
 
 CREATE TABLE locations
 (
-    id_lo      INT AUTO_INCREMENT PRIMARY KEY,
+    locations_id      INT AUTO_INCREMENT PRIMARY KEY,
     name_lo    VARCHAR(250) NOT NULL,
     phone_lo   VARCHAR(30)  NOT NULL,
     email_lo   VARCHAR(50),
@@ -208,24 +208,24 @@ VALUES ('Alina Sime', 'simealina@gmail.com', 'alabala04', '+40752312700', '100')
 
 
 
-INSERT INTO rentals (id_us, id_eq, start_date, end_date, price)
+INSERT INTO rentals (users_id, equipment_id, start_date, end_date, price)
 VALUES ('1', '1', '2021-04-19 14:03:01', '2021-04-27 11:05:01', '15');
-INSERT INTO rentals (id_us, id_eq, start_date, end_date, price)
+INSERT INTO rentals (users_id, equipment_id, start_date, end_date, price)
 VALUES ('4', '3', '2021-04-17 14:02:01', '2021-04-19 10:02:01', '20');
-INSERT INTO rentals (id_us, id_eq, start_date, end_date, price)
+INSERT INTO rentals (users_id, equipment_id, start_date, end_date, price)
 VALUES ('2', '18', '2021-05-11 09:12:01', '2021-05-19 10:32:41', '40');
-INSERT INTO rentals (id_us, id_eq, start_date, end_date, price)
+INSERT INTO rentals (users_id, equipment_id, start_date, end_date, price)
 VALUES ('3', '2', '2021-04-27 16:02:01', '2021-05-03 12:02:01', '20');
 
 
 
-INSERT INTO history (id_us, id_eq)
+INSERT INTO history (users_id, equipment_id)
 VALUES ('1', '1');
-INSERT INTO history (id_us, id_eq)
+INSERT INTO history (users_id, equipment_id)
 VALUES ('4', '3');
-INSERT INTO history (id_us, id_eq)
+INSERT INTO history (users_id, equipment_id)
 VALUES ('2', '4');
-INSERT INTO history (id_us, id_eq)
+INSERT INTO history (users_id, equipment_id)
 VALUES ('3', '2');
 
 

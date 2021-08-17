@@ -15,15 +15,15 @@ public class Locations {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private Long id_lo;
+  private Long locationsId;
   @Column(name = "name_lo")
-  private String name_lo;
+  private String nameLo;
   @Column(name = "phone_lo")
-  private String phone_lo;
+  private String phoneLo;
   @Column(name = "adress_lo")
-  private String adress_lo;
+  private String adressLo;
   @Column(name = "email_lo")
-  private String email_lo;
+  private String emailLo;
   @Column(name = "program")
   private String program;
   @Column(name = "facilities")
