@@ -38,3 +38,5 @@
 - localhost:8080/swagger-ui.html
 - database link   
   http://localhost:8080/h2-console
+
+https://reflectoring.io/spring-security-password-handling/
